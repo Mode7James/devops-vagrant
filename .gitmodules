@@ -1,6 +1,3 @@
-[submodule "www/pyrocms"]
-	path = www/pyrocms
-	url = git://github.com/pyrocms/pyrocms.git
 [submodule "modules/php"]
 	path = modules/php
 	url = git://github.com/philsturgeon/puppet-php.git
@@ -15,4 +12,4 @@
 	url = git://github.com/pyrocms/devops-puppet.git
 [submodule "www/pyrocms-pro"]
 	path = www/pyrocms-pro
-	url = git@github.com:pyrocms/pyrocms-professional.git
+	url = git@github.com:Mode7James/pyrocms-professional.git
