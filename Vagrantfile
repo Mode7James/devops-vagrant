@@ -44,7 +44,7 @@ Vagrant::Config.run do |config|
       puppet.facter = { 
         "fqdn" => "dev.essexlp.local", 
         "hostname" => "www", 
-        "docroot" => '/vagrant/www/pyrocms-pro/'
+        "docroot" => '/vagrant/www/essexlp/'
       }
       puppet.manifest_file  = "ubuntu-apache2-mysql-php5.pp"
       puppet.manifests_path = "puppet/manifests"
