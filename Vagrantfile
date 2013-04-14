@@ -75,6 +75,28 @@ Vagrant::Config.run do |config|
   end
 
   ###
+  #  Creates a basic LAMP stack with MySQL and Professional
+  #  
+  #  To launch run: vagrant up pro_mysql
+  ###
+  config.vm.define :pro_mysql_james do |mysqlp_config|
+    # Map dev.pyrocms-pro.mysql to this IP
+    mysqlp_config.vm.network :hostonly, "198.18.0.210"
+
+    # Enable Puppet
+    mysqlp_config.vm.provision :puppet do |puppet|
+      puppet.facter = { 
+        "fqdn" => "dev.pyrocms-pro-james.mysql", 
+        "hostname" => "www", 
+        "docroot" => '/vagrant/www/pyrocms-pro-james/'
+      } 
+      puppet.manifest_file  = "ubuntu-apache2-mysql-php5.pp"
+      puppet.manifests_path = "puppet/manifests"
+      puppet.module_path  = "puppet/modules"
+    end
+  end
+
+  ###
   #  Creates an instance with SQLite as the database
   #  
   #  To launch run: vagrant up sqlite
